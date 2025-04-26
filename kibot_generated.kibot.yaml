@@ -1,0 +1,560 @@
+# This is a working example.
+# For a more complete reference use `--example`
+kibot:
+  version: 1
+
+global:
+  filters:
+  - number: 1007
+  - number: 1015
+  - number: 58
+  - number: 107
+
+import:
+- file: JLCPCB
+  definitions:
+    _KIBOT_MANF_DIR: Manufacturers/JLCPCB
+    _KIBOT_POS_PRE_TRANSFORM: '[''_kicost_rename'', ''_rot_footprint'']'
+    _KIBOT_BOM_ENABLED: 'false'
+
+preflight:
+  drc:
+    dont_stop: true
+    format: HTML,RPT,JSON,CSV
+    dir: Generated
+  erc:
+    dont_stop: true
+    format: HTML,RPT,JSON,CSV
+    dir: Generated
+
+outputs:
+- name: basic_boardview
+  comment: Board View export
+  type: boardview
+  dir: Generated/Assembly
+- name: generic_bom_html
+  comment: Generic Bill of Materials in HTML format
+  type: bom
+  dir: Generated/BoM/Generic
+  options:
+    format: HTML
+    count_smd_tht: true
+- name: generic_bom_csv
+  comment: Generic Bill of Materials in CSV format
+  type: bom
+  dir: Generated/BoM/Generic
+  options:
+    format: CSV
+    count_smd_tht: true
+- name: generic_bom_hrtxt
+  comment: Generic Bill of Materials in HRTXT format
+  type: bom
+  dir: Generated/BoM/Generic
+  options:
+    format: HRTXT
+    hrtxt:
+      separator: '|'
+    count_smd_tht: true
+- name: generic_bom_tsv
+  comment: Generic Bill of Materials in TSV format
+  type: bom
+  dir: Generated/BoM/Generic
+  options:
+    format: TSV
+    count_smd_tht: true
+- name: generic_bom_xml
+  comment: Generic Bill of Materials in XML format
+  type: bom
+  dir: Generated/BoM/Generic
+  options:
+    format: XML
+    count_smd_tht: true
+- name: generic_bom_xlsx
+  comment: Generic Bill of Materials in XLSX format
+  type: bom
+  dir: Generated/BoM/Generic
+  options:
+    format: XLSX
+    count_smd_tht: true
+- name: positional_bom_html
+  comment: Positional Bill of Materials in HTML format
+  type: bom
+  dir: Generated/BoM/Positional
+  options:
+    format: HTML
+    columns: &id001
+    - Row
+    - Description
+    - Part
+    - Part Lib
+    - References
+    - Value
+    - Footprint
+    - Footprint Lib
+    - Quantity Per PCB
+    - Build Quantity
+    - Status
+    - Datasheet
+    - Sheetpath
+    - Source BoM
+    - ${DNP}
+    - ${EXCLUDE_FROM_BOARD}
+    - ${EXCLUDE_FROM_SIM}
+    - footprint full
+    - Footprint X
+    - Footprint Y
+    - Footprint Rot
+    - Footprint Side
+    - Footprint Type
+    - Footprint Type NV
+    - Footprint Populate
+    - Footprint X-Size
+    - Footprint Y-Size
+    - ${ITEM_NUMBER}
+    - Net Name
+    - Net Label
+    - Net Class
+    - ${QUANTITY}
+    count_smd_tht: true
+    html:
+      style: modern-red
+- name: positional_bom_xlsx
+  comment: Positional Bill of Materials in XLSX format
+  type: bom
+  dir: Generated/BoM/Positional
+  options:
+    format: XLSX
+    columns: *id001
+    count_smd_tht: true
+    xlsx:
+      style: modern-red
+- name: kicad_internal_bom
+  type: bom
+  dir: Generated/BoM/KiCad
+  comment: BoM using KiCad settings
+  options:
+    format: KICAD
+    ignore_dnf: false
+    group_not_fitted: true
+    group_fields: []
+    sort_style: kicad_bom
+    columns:
+    - _kicad_bom_fields
+- name: basic_excellon
+  comment: Drill files in EXCELLON format
+  type: excellon
+  dir: Generated/Gerbers_and_Drill
+  options:
+    map: pdf
+- name: basic_export_3d_step
+  comment: 3D model in STEP format
+  type: export_3d
+  dir: Generated/3D
+  options:
+    format: step
+- name: basic_export_3d_stl
+  comment: 3D model in STL format
+  type: export_3d
+  dir: Generated/3D
+  options:
+    format: stl
+- name: basic_info
+  comment: Information about the run
+  type: info
+  dir: Generated/.
+- name: basic_ipc2581
+  comment: PCB in IPC-2581 format
+  type: ipc2581
+  dir: Generated/Export
+- name: basic_kicanvas
+  comment: Web page to browse the schematic and/or PCB
+  type: kicanvas
+  dir: Generated/Browse
+  options:
+    source:
+    - schematic
+    - pcb
+- name: basic_kikit_present
+  comment: Simple project presentation
+  type: kikit_present
+  dir: Generated/Presentation
+  options:
+    description: '# Presentation for rjsplitter
+
+      This is an automatically generated presentation page'
+    boards:
+      mode: local
+      comment: Resources included
+      front_image: renderer_for_present
+      back_image: renderer_for_present
+      gerbers: gerbers_for_present
+- name: renderer_for_present
+  comment: Renderer for the presentation
+  type: pcbdraw
+  dir: Generated/Render_for_presentation
+  run_by_default: false
+- name: gerbers_for_present
+  comment: Gerbers for the presentation
+  type: gerber
+  dir: Generated/Gerber_for_presentation
+  layers: copper
+  run_by_default: false
+- name: basic_navigate_results_rb
+  comment: Web page to browse the results
+  type: navigate_results_rb
+  dir: Generated/Browse
+  options:
+    link_from_root: Generated/index.html
+    skip_not_run: true
+- name: classic_netlist
+  comment: Schematic netlist in KiCad format
+  type: netlist
+  dir: Generated/Export
+- name: ipc_netlist
+  comment: IPC-D-356 netlist for testing
+  type: netlist
+  dir: Generated/Export
+  options:
+    format: ipc
+- name: basic_odb
+  comment: PCB in ODB++ format
+  type: odb
+  dir: Generated/Export
+- name: basic_pcb_print_pdf
+  comment: PCB
+  type: pcb_print
+  dir: Generated/PCB/PDF
+  options:
+    format: PDF
+    pages:
+    - layers:
+      - layer: F.Cu
+      - layer: F.Mask
+        color: '#14332440'
+      - layer: F.Silkscreen
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      sheet: Front copper
+    - layers:
+      - layer: F.Mask
+        color: '#14332440'
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      sheet: Front soldermask (negative)
+    - layers:
+      - layer: B.Cu
+      - layer: B.Mask
+        color: '#14332440'
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      mirror: true
+      sheet: Bottom copper
+    - layers:
+      - layer: F.Courtyard
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      sheet: Front courtyard area
+    - layers:
+      - layer: F.Fab
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      sheet: Front documentation
+    - repeat_for_layer: User.Drawings
+      repeat_layers: drill_pairs
+      layers:
+      - layer: User.Drawings
+        color: '#000000'
+      - layer: Edge.Cuts
+        color: '#000000'
+    keep_temporal_files: true
+- name: basic_pcb_print_png
+  comment: PCB
+  type: pcb_print
+  dir: Generated/PCB/PNG
+  options:
+    format: PNG
+    pages:
+    - layers:
+      - layer: F.Cu
+      - layer: F.Mask
+        color: '#14332440'
+      - layer: F.Silkscreen
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      sheet: Front copper
+    - layers:
+      - layer: F.Mask
+        color: '#14332440'
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      sheet: Front soldermask (negative)
+    - layers:
+      - layer: B.Cu
+      - layer: B.Mask
+        color: '#14332440'
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      mirror: true
+      sheet: Bottom copper
+    - layers:
+      - layer: F.Courtyard
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      sheet: Front courtyard area
+    - layers:
+      - layer: F.Fab
+      - layer: Edge.Cuts
+      - layer: User.Comments
+      - layer: User.2
+      - layer: User.4
+      - layer: User.6
+      sheet: Front documentation
+    - repeat_for_layer: User.Drawings
+      repeat_layers: drill_pairs
+      layers:
+      - layer: User.Drawings
+        color: '#000000'
+      - layer: Edge.Cuts
+        color: '#000000'
+    keep_temporal_files: true
+    add_background: true
+- name: basic_pcbdraw_svg_jlcpcb_green_enig_top
+  comment: PCB 2D render in SVG format, using jlcpcb-green-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/jlcpcb_green_enig
+  options:
+    style: jlcpcb-green-enig
+    format: svg
+- name: basic_pcbdraw_png_jlcpcb_green_enig_top
+  comment: PCB 2D render in PNG format, using jlcpcb-green-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/jlcpcb_green_enig
+  options:
+    style: jlcpcb-green-enig
+    format: png
+- name: basic_pcbdraw_jpg_jlcpcb_green_enig_top
+  comment: PCB 2D render in JPG format, using jlcpcb-green-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/jlcpcb_green_enig
+  options:
+    style: jlcpcb-green-enig
+    format: jpg
+- name: basic_pcbdraw_svg_set_blue_enig_top
+  comment: PCB 2D render in SVG format, using set-blue-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_blue_enig
+  options:
+    style: set-blue-enig
+    format: svg
+- name: basic_pcbdraw_png_set_blue_enig_top
+  comment: PCB 2D render in PNG format, using set-blue-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_blue_enig
+  options:
+    style: set-blue-enig
+    format: png
+- name: basic_pcbdraw_jpg_set_blue_enig_top
+  comment: PCB 2D render in JPG format, using set-blue-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_blue_enig
+  options:
+    style: set-blue-enig
+    format: jpg
+- name: basic_pcbdraw_svg_set_red_hasl_top
+  comment: PCB 2D render in SVG format, using set-red-hasl style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_red_hasl
+  options:
+    style: set-red-hasl
+    format: svg
+- name: basic_pcbdraw_png_set_red_hasl_top
+  comment: PCB 2D render in PNG format, using set-red-hasl style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_red_hasl
+  options:
+    style: set-red-hasl
+    format: png
+- name: basic_pcbdraw_jpg_set_red_hasl_top
+  comment: PCB 2D render in JPG format, using set-red-hasl style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_red_hasl
+  options:
+    style: set-red-hasl
+    format: jpg
+- name: basic_pcbdraw_svg_jlcpcb_green_enig_bottom
+  comment: PCB 2D render in SVG format, using jlcpcb-green-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/jlcpcb_green_enig
+  options:
+    style: jlcpcb-green-enig
+    format: svg
+    bottom: true
+- name: basic_pcbdraw_png_jlcpcb_green_enig_bottom
+  comment: PCB 2D render in PNG format, using jlcpcb-green-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/jlcpcb_green_enig
+  options:
+    style: jlcpcb-green-enig
+    format: png
+    bottom: true
+- name: basic_pcbdraw_jpg_jlcpcb_green_enig_bottom
+  comment: PCB 2D render in JPG format, using jlcpcb-green-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/jlcpcb_green_enig
+  options:
+    style: jlcpcb-green-enig
+    format: jpg
+    bottom: true
+- name: basic_pcbdraw_svg_set_blue_enig_bottom
+  comment: PCB 2D render in SVG format, using set-blue-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_blue_enig
+  options:
+    style: set-blue-enig
+    format: svg
+    bottom: true
+- name: basic_pcbdraw_png_set_blue_enig_bottom
+  comment: PCB 2D render in PNG format, using set-blue-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_blue_enig
+  options:
+    style: set-blue-enig
+    format: png
+    bottom: true
+- name: basic_pcbdraw_jpg_set_blue_enig_bottom
+  comment: PCB 2D render in JPG format, using set-blue-enig style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_blue_enig
+  options:
+    style: set-blue-enig
+    format: jpg
+    bottom: true
+- name: basic_pcbdraw_svg_set_red_hasl_bottom
+  comment: PCB 2D render in SVG format, using set-red-hasl style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_red_hasl
+  options:
+    style: set-red-hasl
+    format: svg
+    bottom: true
+- name: basic_pcbdraw_png_set_red_hasl_bottom
+  comment: PCB 2D render in PNG format, using set-red-hasl style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_red_hasl
+  options:
+    style: set-red-hasl
+    format: png
+    bottom: true
+- name: basic_pcbdraw_jpg_set_red_hasl_bottom
+  comment: PCB 2D render in JPG format, using set-red-hasl style
+  type: pcbdraw
+  dir: Generated/PCB/2D_render/set_red_hasl
+  options:
+    style: set-red-hasl
+    format: jpg
+    bottom: true
+- name: basic_pdf_sch_print
+  comment: Schematic in PDF format
+  type: pdf_sch_print
+  dir: Generated/Schematic
+- name: basic_position_ASCII
+  comment: Components position for Pick & Place
+  type: position
+  dir: Generated/Position
+  options:
+    format: ASCII
+    only_smd: false
+    separate_files_for_front_and_back: false
+- name: basic_position_CSV
+  comment: Components position for Pick & Place
+  type: position
+  dir: Generated/Position
+  options:
+    format: CSV
+    only_smd: false
+    separate_files_for_front_and_back: false
+- name: basic_qr_lib_example
+  comment: QR code symbol and footprint example
+  type: qr_lib
+  dir: Generated/QR_libs
+  options:
+    qrs:
+    - correction_level: medium
+      name: QR_data
+      pcb_negative: true
+    - correction_level: medium
+      name: QR_kibot
+      text: https://github.com/INTI-CMNB/KiBot/
+    use_sch_dir: false
+- name: basic_render_3d_top
+  comment: 3D view from top
+  type: render_3d
+  dir: Generated/3D
+  options:
+    ray_tracing: true
+    orthographic: true
+- name: basic_render_3d_30deg
+  comment: 3D view from 30 degrees
+  type: render_3d
+  dir: Generated/3D
+  output_id: 30deg
+  options:
+    ray_tracing: true
+    rotate_x: 3
+    rotate_z: -2
+- name: basic_render_3d_bottom
+  comment: 3D view from bottom
+  type: render_3d
+  dir: Generated/3D
+  options:
+    ray_tracing: true
+    orthographic: true
+    view: bottom
+- name: report_full
+  comment: Full design report
+  type: report
+  options:
+    template: full_SVG
+- name: basic_vrml
+  comment: PCB in VRML format
+  type: vrml
+  dir: Generated/3D
+
+...
+definitions:
+  _KIBOT_MANF_DIR_COMP: Manufacturers
+  _KIBOT_GERBER_LAYERS: "- layer: 'F.Cu'\n        suffix: 'F_Cu'\n        description:\
+    \ 'Front copper'\n      - layer: 'F.Mask'\n        suffix: 'F_Mask'\n        description:\
+    \ 'Front soldermask (negative)'\n      - layer: 'B.Cu'\n        suffix: 'B_Cu'\n\
+    \        description: 'Bottom copper'\n      - layer: 'B.Mask'\n        suffix:\
+    \ 'B_Mask'\n        description: 'Bottom soldermask (negative)'\n      - layer:\
+    \ 'F.Silkscreen'\n        suffix: 'F_Silkscreen'\n        description: 'Front\
+    \ silkscreen (artwork)'\n      - layer: 'Edge.Cuts'\n        suffix: 'Edge_Cuts'\n\
+    \        description: 'Board shape'"
