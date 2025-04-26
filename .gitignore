@@ -1,0 +1,7 @@
+fp-info-cache
+*-backups
+*.stl
+*.scad
+*.gcode
+~*.lck
+venv
