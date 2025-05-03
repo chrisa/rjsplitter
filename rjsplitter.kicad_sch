@@ -346,6 +346,215 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Connector:RJ11"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at -5.08 11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify right)
+				)
+			)
+			(property "Value" "RJ11"
+				(at 2.54 11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0.635 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0.635 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "RJ connector, 6P2C (6 positions 2 connected)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "6P2C RJ socket connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "6P2C* RJ11*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "RJ11_0_1"
+				(polyline
+					(pts
+						(xy -6.35 3.175) (xy -5.08 3.175) (xy -5.08 3.175)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 1.905) (xy -5.08 1.905) (xy -5.08 1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 0.635) (xy -5.08 0.635) (xy -5.08 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 -0.635) (xy -5.08 -0.635) (xy -5.08 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 -1.905) (xy -5.08 -1.905) (xy -5.08 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -6.35 -4.445) (xy -6.35 6.985) (xy 3.81 6.985) (xy 3.81 4.445) (xy 5.08 4.445) (xy 5.08 3.175)
+						(xy 6.35 3.175) (xy 6.35 -0.635) (xy 5.08 -0.635) (xy 5.08 -1.905) (xy 3.81 -1.905) (xy 3.81 -4.445)
+						(xy -6.35 -4.445) (xy -6.35 -4.445)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 4.445) (xy -6.35 4.445) (xy -6.35 4.445)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 7.62 10.16)
+					(end -7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "RJ11_1_1"
+				(pin passive line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Mechanical:MountingHole"
 			(pin_names
 				(offset 1.016)
@@ -431,270 +640,160 @@
 		)
 	)
 	(no_connect
-		(at 133.35 139.7)
-		(uuid "03448922-d177-4722-980a-2b78dddb975d")
-	)
-	(no_connect
-		(at 133.35 41.91)
-		(uuid "06c5baed-a284-4f74-85a9-03f8fff3ac48")
-	)
-	(no_connect
-		(at 133.35 71.12)
-		(uuid "0a79a7f9-ac9e-418b-a6a3-76bbd8fc36d1")
-	)
-	(no_connect
-		(at 133.35 134.62)
-		(uuid "0c6d6f23-b53f-4a9b-8ffb-2d334f57761e")
-	)
-	(no_connect
-		(at 133.35 107.95)
-		(uuid "1ef07316-c30d-4cb7-933f-3688eec57de5")
-	)
-	(no_connect
-		(at 133.35 137.16)
-		(uuid "314d187d-ad3e-4028-89b4-83cb2f1794ea")
-	)
-	(no_connect
-		(at 133.35 73.66)
-		(uuid "4a6d5193-8a32-4027-84aa-ec0bf8d6ca3c")
-	)
-	(no_connect
-		(at 133.35 105.41)
-		(uuid "69c1b218-4606-44a9-83cb-8fc0f68d8c83")
-	)
-	(no_connect
-		(at 133.35 152.4)
-		(uuid "6d5d6eef-1cec-4cf9-b807-9520e4494fee")
-	)
-	(no_connect
-		(at 133.35 88.9)
-		(uuid "707f38dc-8cfb-4d64-936f-07759e5fcd0c")
-	)
-	(no_connect
-		(at 133.35 147.32)
-		(uuid "73baa6df-80d3-4660-a6aa-9f9c1b182064")
-	)
-	(no_connect
-		(at 133.35 115.57)
-		(uuid "76aeaad1-f6b1-41b7-b49d-e348d6b83cbf")
-	)
-	(no_connect
-		(at 133.35 120.65)
-		(uuid "844483ee-bcb7-461b-b05b-eeb732dbc5ef")
-	)
-	(no_connect
 		(at 133.35 39.37)
-		(uuid "93b50572-cfdb-42ca-9f7d-b08c3393ff44")
-	)
-	(no_connect
-		(at 133.35 76.2)
-		(uuid "9b888eb3-8430-414b-ad52-308b0dadf384")
-	)
-	(no_connect
-		(at 133.35 57.15)
-		(uuid "a16531e2-2d95-4e19-b6fc-75c0d193726a")
-	)
-	(no_connect
-		(at 133.35 44.45)
-		(uuid "a22c43c2-2a73-472c-8081-78e2f0e2bda0")
-	)
-	(no_connect
-		(at 133.35 102.87)
-		(uuid "a59e39f1-a5d9-42c4-81a9-870f73ab6ee7")
-	)
-	(no_connect
-		(at 133.35 149.86)
-		(uuid "b9057ea1-98a2-45ea-ae03-29dadfb13ace")
+		(uuid "54f71bc2-14ca-4e74-85d3-b53bc592a6c6")
 	)
 	(no_connect
 		(at 133.35 54.61)
-		(uuid "c61060a3-b209-4a01-a825-804d63592036")
+		(uuid "a28cda14-c443-4a18-aa02-43cb0324e2c0")
 	)
 	(no_connect
-		(at 133.35 52.07)
-		(uuid "c88d581d-77be-441b-bd14-d53bc9cd9241")
+		(at 133.35 57.15)
+		(uuid "a49bd8a9-bd14-4aae-8879-7bb6877180f0")
 	)
 	(no_connect
-		(at 133.35 118.11)
-		(uuid "d07e0cfb-4c0d-485d-a1ad-2696261a5fd6")
-	)
-	(no_connect
-		(at 133.35 83.82)
-		(uuid "d37c67df-abc1-43b9-b5c0-eac97f4da533")
-	)
-	(no_connect
-		(at 133.35 86.36)
-		(uuid "fa32cce4-4824-4ff2-8e7a-8be9ab2f3b77")
+		(at 133.35 41.91)
+		(uuid "c0144006-d1a6-4604-ad73-8bca77fe49de")
 	)
 	(wire
 		(pts
-			(xy 133.35 144.78) (xy 110.49 144.78)
+			(xy 113.03 57.15) (xy 113.03 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "09b56668-4b58-4e6d-a8ac-50165fc02836")
+		(uuid "005383a8-dbca-42ac-9316-57891363f498")
 	)
 	(wire
 		(pts
-			(xy 118.11 44.45) (xy 93.98 44.45)
+			(xy 93.98 49.53) (xy 133.35 49.53)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "21a71990-c636-450f-820c-9b45d1df5c10")
+		(uuid "103e4c10-7791-47d6-9ef2-a00c386fb0f8")
 	)
 	(wire
 		(pts
-			(xy 118.11 110.49) (xy 118.11 44.45)
+			(xy 120.65 80.01) (xy 133.35 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2d29bcb0-98de-4186-b7bf-17cfaa5bf0ec")
+		(uuid "123d86aa-d3c7-4c04-aa3e-36c402951397")
 	)
 	(wire
 		(pts
-			(xy 120.65 52.07) (xy 120.65 81.28)
+			(xy 113.03 115.57) (xy 133.35 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "36cf16e8-2e08-4859-b59b-6271f21458b9")
+		(uuid "3f4a19f1-b919-41ee-9b47-0c632a06c2ab")
 	)
 	(wire
 		(pts
-			(xy 128.27 49.53) (xy 133.35 49.53)
+			(xy 93.98 46.99) (xy 133.35 46.99)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4ec8b6b9-3971-4f7d-a6a1-9247beb91226")
+		(uuid "4b52b129-8613-483b-b1ea-83019fe5e1f7")
 	)
 	(wire
 		(pts
-			(xy 113.03 142.24) (xy 133.35 142.24)
+			(xy 118.11 82.55) (xy 133.35 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "50ea10ed-7daa-408a-8468-fb4692790aee")
+		(uuid "4b7fd04a-3e21-4b2a-8569-3b39d3f25f8f")
 	)
 	(wire
 		(pts
-			(xy 125.73 54.61) (xy 125.73 46.99)
+			(xy 93.98 54.61) (xy 115.57 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5fce5525-ab6a-4787-986a-78fd3c10ed5c")
+		(uuid "5a32ad97-b126-42b5-a4da-a02cbcd53513")
 	)
 	(wire
 		(pts
-			(xy 93.98 57.15) (xy 128.27 57.15)
+			(xy 93.98 44.45) (xy 133.35 44.45)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "64f06c43-ef0f-42b8-ab7b-b167ba54def8")
+		(uuid "5f732bd8-26b3-4b03-bb53-d6c31f2fc0b8")
 	)
 	(wire
 		(pts
-			(xy 93.98 46.99) (xy 115.57 46.99)
+			(xy 118.11 41.91) (xy 118.11 82.55)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "783f829d-d405-4c28-80da-f15396a662c5")
+		(uuid "6a7fbd84-9776-4564-b40f-93d98d4878a3")
 	)
 	(wire
 		(pts
-			(xy 123.19 78.74) (xy 133.35 78.74)
+			(xy 93.98 57.15) (xy 113.03 57.15)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "78fc3eec-6362-42f2-a396-113df51619fd")
+		(uuid "7ed5b15e-1ac6-4737-b6da-849d0d47e7ee")
 	)
 	(wire
 		(pts
-			(xy 93.98 49.53) (xy 123.19 49.53)
+			(xy 93.98 41.91) (xy 118.11 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "793840c3-7b92-4565-86fe-42d6c97f01fa")
+		(uuid "91974eb9-1af5-45ae-86fd-f682ad12f516")
 	)
 	(wire
 		(pts
-			(xy 93.98 39.37) (xy 113.03 39.37)
+			(xy 120.65 39.37) (xy 120.65 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "86a69f1e-3ecb-43ad-824a-66e8f2bb4124")
+		(uuid "ca99329c-7d93-4625-9eab-d338270383d9")
 	)
 	(wire
 		(pts
-			(xy 115.57 46.99) (xy 115.57 113.03)
+			(xy 115.57 54.61) (xy 115.57 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "a70973b4-9342-438b-8cb4-731c046eccb2")
+		(uuid "d598bbfd-c6fc-44f4-9a51-2a38d4f3b098")
 	)
 	(wire
 		(pts
-			(xy 113.03 39.37) (xy 113.03 142.24)
+			(xy 93.98 39.37) (xy 120.65 39.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c2b95333-78b7-49c1-8b0f-20bb20c63bd4")
-	)
-	(wire
-		(pts
-			(xy 125.73 46.99) (xy 133.35 46.99)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c35d4018-6416-4c77-a6ec-9402b72c31e3")
-	)
-	(wire
-		(pts
-			(xy 123.19 49.53) (xy 123.19 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c6e28e14-5960-43d8-be6d-45504f0ee90c")
-	)
-	(wire
-		(pts
-			(xy 93.98 54.61) (xy 125.73 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8f2296b-9b13-439c-ba22-18d85d121344")
+		(uuid "d5cd2d63-4b3e-4b40-964e-be123d165fda")
 	)
 	(wire
 		(pts
@@ -704,67 +803,85 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "d4add4b3-7b60-4fa0-bbe7-e0de6e0ce97e")
+		(uuid "dff4f2c2-b37b-47da-8a4a-e6f5f6cf7adf")
 	)
 	(wire
 		(pts
-			(xy 110.49 144.78) (xy 110.49 41.91)
+			(xy 93.98 52.07) (xy 133.35 52.07)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d7cbacca-850d-4817-8cb4-274ea705e60b")
+		(uuid "f7c5f854-932b-4e9b-ae47-5522942358a1")
 	)
-	(wire
-		(pts
-			(xy 93.98 52.07) (xy 120.65 52.07)
+	(symbol
+		(lib_id "Connector:RJ11")
+		(at 143.51 115.57 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "281bd4ef-9580-4496-bb0c-fc29c144072e")
+		(property "Reference" "J4"
+			(at 143.51 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(property "Value" "RJ11"
+			(at 143.51 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
 		)
-		(uuid "dae5cdd9-e267-4333-b566-5486fbe37ca9")
-	)
-	(wire
-		(pts
-			(xy 128.27 57.15) (xy 128.27 49.53)
+		(property "Footprint" "kicad:AMPHENOL_54601-906WPLF"
+			(at 143.51 114.935 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(property "Datasheet" "~"
+			(at 143.51 114.935 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(uuid "e1b2e431-0ed7-4e60-945a-bd0d99eb9539")
-	)
-	(wire
-		(pts
-			(xy 120.65 81.28) (xy 133.35 81.28)
+		(property "Description" "RJ connector, 6P2C (6 positions 2 connected)"
+			(at 143.51 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(pin "1"
+			(uuid "8c7c8c17-fdfc-41ba-872b-d10b77fcc0b6")
 		)
-		(uuid "f5a07ec4-2cdc-4910-8021-1abd15c268cd")
-	)
-	(wire
-		(pts
-			(xy 110.49 41.91) (xy 93.98 41.91)
+		(pin "2"
+			(uuid "ab446e5c-60f6-4703-83d5-7d15b776d682")
 		)
-		(stroke
-			(width 0)
-			(type default)
+		(instances
+			(project "rjsplitter"
+				(path "/8e47afe4-09a2-4ea4-88a9-d9910536c8c9"
+					(reference "J4")
+					(unit 1)
+				)
+			)
 		)
-		(uuid "f7d6f522-3093-43c3-9694-ecb88066a4da")
-	)
-	(wire
-		(pts
-			(xy 118.11 110.49) (xy 133.35 110.49)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fde1645b-f9f9-422a-982f-20a308c08576")
 	)
 	(symbol
 		(lib_id "Connector:8P8C")
@@ -917,34 +1034,33 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:8P8C")
-		(at 143.51 81.28 0)
+		(lib_id "Connector:RJ11")
+		(at 143.51 82.55 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "64d170f4-0dc8-40ca-be6e-1fc9bea557ad")
+		(uuid "70b7c1a2-245d-4338-86c5-4f14fa7209dd")
 		(property "Reference" "J3"
-			(at 143.51 63.5 0)
+			(at 143.51 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "8P8C"
-			(at 143.51 66.04 0)
+		(property "Value" "RJ11"
+			(at 143.51 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Connector_RJ:RJ45_Amphenol_54602-x08_Horizontal"
-			(at 143.51 80.645 90)
+		(property "Footprint" "kicad:AMPHENOL_54601-906WPLF"
+			(at 143.51 81.915 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -953,7 +1069,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 143.51 80.645 90)
+			(at 143.51 81.915 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -961,217 +1077,25 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "RJ connector, 8P8C (8 positions 8 connected), RJ31/RJ32/RJ33/RJ34/RJ35/RJ41/RJ45/RJ49/RJ61"
-			(at 143.51 81.28 0)
+		(property "Description" "RJ connector, 6P2C (6 positions 2 connected)"
+			(at 143.51 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
-		)
-		(pin "6"
-			(uuid "43a42bb8-1b95-4258-99ab-b5e500d04845")
-		)
-		(pin "3"
-			(uuid "4872a7a9-dcb4-429a-8360-155daad53f1e")
-		)
-		(pin "2"
-			(uuid "cbb53983-6755-45a1-8a0d-f07e2eb0de9b")
-		)
-		(pin "4"
-			(uuid "ef817381-4a90-47ed-ad87-9e1c23cb09b9")
-		)
-		(pin "5"
-			(uuid "89c9ff73-9a9f-4f67-bcf6-a700494c52d7")
 		)
 		(pin "1"
-			(uuid "0e2feb93-0e34-4d38-bc9e-9f838f120a16")
+			(uuid "6058b6b2-e2a1-47fc-b4ce-3805d8292ed7")
 		)
-		(pin "8"
-			(uuid "87fabd5d-3aeb-4a4a-916c-870a60c06781")
-		)
-		(pin "7"
-			(uuid "8855333d-03ad-4db3-814c-368dc8ef3c0c")
+		(pin "2"
+			(uuid "d36ddef2-ff3f-46d5-9338-811286a49bba")
 		)
 		(instances
-			(project "rjsplitter"
+			(project ""
 				(path "/8e47afe4-09a2-4ea4-88a9-d9910536c8c9"
 					(reference "J3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:8P8C")
-		(at 143.51 113.03 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7bfbe3c7-2761-4a5d-88fa-0308f237380d")
-		(property "Reference" "J4"
-			(at 143.51 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "8P8C"
-			(at 143.51 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_RJ:RJ45_Amphenol_54602-x08_Horizontal"
-			(at 143.51 112.395 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 143.51 112.395 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "RJ connector, 8P8C (8 positions 8 connected), RJ31/RJ32/RJ33/RJ34/RJ35/RJ41/RJ45/RJ49/RJ61"
-			(at 143.51 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "6"
-			(uuid "52649217-c900-4822-b8c8-174bb3453772")
-		)
-		(pin "3"
-			(uuid "8de87b86-2bed-4906-ba22-a0d5e9940dba")
-		)
-		(pin "2"
-			(uuid "4f9801d8-c808-47ae-9fa5-bc1fbfba252b")
-		)
-		(pin "4"
-			(uuid "8e32ff8a-00ea-45a4-be0e-cf6331d97d8b")
-		)
-		(pin "5"
-			(uuid "3b3c4f85-1488-40e1-b1c0-e8866b148bc8")
-		)
-		(pin "1"
-			(uuid "3b9d12e1-b3e2-48f8-9656-2ded603155ac")
-		)
-		(pin "8"
-			(uuid "9242c244-22f9-4414-b21c-e4c37fceac64")
-		)
-		(pin "7"
-			(uuid "001615c1-76e1-43e8-b221-1d6da272342d")
-		)
-		(instances
-			(project "rjsplitter"
-				(path "/8e47afe4-09a2-4ea4-88a9-d9910536c8c9"
-					(reference "J4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:8P8C")
-		(at 143.51 144.78 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9625e3e0-0e3c-40ab-b9d5-da3631ace8aa")
-		(property "Reference" "J5"
-			(at 143.51 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "8P8C"
-			(at 143.51 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_RJ:RJ45_Amphenol_54602-x08_Horizontal"
-			(at 143.51 144.145 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 143.51 144.145 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "RJ connector, 8P8C (8 positions 8 connected), RJ31/RJ32/RJ33/RJ34/RJ35/RJ41/RJ45/RJ49/RJ61"
-			(at 143.51 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "6"
-			(uuid "935f931e-9882-44e7-8406-a3dc8890042c")
-		)
-		(pin "3"
-			(uuid "f68e230c-8c3b-4aa3-ac1b-74b232aadec2")
-		)
-		(pin "2"
-			(uuid "2ffc80d4-c761-4368-9fa6-f95510fd8b45")
-		)
-		(pin "4"
-			(uuid "0ed7d97d-d625-4e63-922e-16dc6c4f288f")
-		)
-		(pin "5"
-			(uuid "e9671e2d-ae21-462e-997c-5c20371aff39")
-		)
-		(pin "1"
-			(uuid "81345bd5-6da6-44cc-826e-721d7752b861")
-		)
-		(pin "8"
-			(uuid "223749e3-e05b-4818-ad00-65a658aee002")
-		)
-		(pin "7"
-			(uuid "3e907fd4-8321-4935-83b3-600115ef6f42")
-		)
-		(instances
-			(project "rjsplitter"
-				(path "/8e47afe4-09a2-4ea4-88a9-d9910536c8c9"
-					(reference "J5")
 					(unit 1)
 				)
 			)
